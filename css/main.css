@@ -98,6 +98,813 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html{
+    font-size: 62.5%; /* Reset para rem    1 rem = 10px */
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    background-color: #f2f2f2f2;
+}
+
+/* ===================================================
+=                     UTILIDADES                     =
+=================================================== */
+img{
+    max-width: 100%;
+}
+
+.contenedor{
+    margin:0 auto 0 auto;
+}
+@media (min-width:480px){
+    .contenedor{
+        width: 95%;
+    }
+}
+@media (min-width:768px){
+    .contenedor{
+        width: 90%;
+    }
+}
+@media (min-width:992px){
+    .contenedor{
+        max-width: 120rem;
+    }
+}
+
+h1{
+  font-size: 3.5em;
+  line-height: 4.4rem;
+  margin: 2.1rem 0;
+}
+
+h2{
+  font-size: 3.1rem;
+  line-height: 4.3rem;
+  margin: 1.9rem 0;
+  font-family: 'Oswald', sans-serif;
+}
+h2:after{
+    content: '';
+    margin: 0 auto;
+    background-image: url(../img/separador.png);
+    height: 3rem;
+    width: 10rem;
+    display: block;
+}
+
+h3{
+    margin: 1.2rem 0;
+    font-family: 'PT Sans', sans-serif;
+    color: #FE4918;
+    font-size: 2rem;
+}
+
+h4{
+  font-size: 1.6rem;
+  margin: 2.1rem 0;
+}
+
+h5{
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  margin: 2.2rem 0;
+}
+
+p{
+  font-size: 1.6rem;
+  margin: 1.6rem 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a{
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+
+ul{
+    padding: 0;
+}
+ul li{
+    list-style: none;
+    font-size: 1.4rem;
+}
+
+blockquote{
+    margin: 0;
+    padding: 1rem 2.4rem;
+}
+
+span{
+    font-size: 1.2rem;
+    margin: 0.4rem 0;
+}
+
+.fw-300{
+    font-weight: 300;
+}
+
+.fw-400{
+    font-weight: 400;
+}
+
+.fw-700{
+    font-weight: 700;
+}
+
+.seccion{
+    padding: 3rem 0;
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+.mayusculas{
+    text-transform: uppercase;
+}
+
+.boton{
+    cursor: pointer;
+    padding: 0.5rem 3rem;
+    text-align: center;
+    display: inline-block;
+}
+@media (max-width:480px){
+    .boton{
+        display: block;
+        width: 100%;
+    }
+}
+
+.btn-naranja{
+    background-color: #FE4918;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    transition: 200ms;
+}
+.btn-naranja:hover{
+    background-color: #dd3001;
+}
+
+.btn-blanco{
+    background-color: #FFFFFF;
+    color: #FE4918;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    transition: 200ms;
+    border: 1px solid #FE4918;
+}
+.btn-blanco:hover{
+    background-color: #FE4918;
+    color: #FFFFFF;
+}
+.btn-transparente{
+    background-color: transparent;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    border: 3px solid #FFFFFF;
+    transition: 200ms;
+}
+.btn-transparente:hover{
+    background-color: #FE4918;
+    color: #FFFFFF;
+    border: 3px solid #FE4918;
+}
+
+.zona-botones{
+    margin-bottom: 1rem;
+}
+.zona-botones::before{
+    content: '';
+    height: 1px;
+    width: 100%;
+    margin-bottom: 2rem;
+    display: block;
+    background-color: rgba(254, 73, 24, 0.5);
+}
+
+.texto-derecha{
+    text-align: right;
+}
+
+.texto-izquierda{
+    text-align: left;
+}
+
+.numero-grande{
+    color: #FE4918;
+    font-family: 'Oswald', sans-serif;
+    display: block;
+    font-size: 8.5rem;
+    margin: 0 0 2rem 0;
+    line-height: 9.5rem;
+}
+
+/* ==================================================
+=                      CABECERA                     =
+================================================== */
+div.heroe{
+    background-image: url(../img/encabezado.jpg);
+    height: 100vh;
+    background-position: top center;
+    background-size: cover;
+}
+
+.contenido-cabecera{
+    padding-top: 4rem;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.redes-sociales a{
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    margin-right: 2rem;
+}
+.redes-sociales a:last-child{
+    margin-right: 0;
+}
+
+.info-evento{
+    margin: 5rem auto 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+@media (min-width:769px){
+    .info-evento{
+        width: 90rem;
+    }
+}
+
+.info-evento p{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.info-evento p svg{
+    color: #FE4918;
+    font-size: 3rem;
+}
+
+.nombre-sitio{
+    font-family: 'PT Sans', sans-serif;
+    padding-top: 2rem;
+}
+@media (min-width:760px){
+    .nombre-sitio{
+        font-size: 7rem;
+    }
+}
+
+.slogan span{
+    font-size: 1.8rem;
+}
+
+/* ==================================================
+=                        BARRA                      =
+================================================== */
+.barra{
+    background-color: #353535;
+}
+
+.navegador{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-auto-rows: minmax(min-content, max-content);
+    align-items: center;
+}
+.logo{grid-column: 1 / 2;}
+.menu-movil{grid-column: 2 / 3; text-align: center;}
+.navegador-pricipal{grid-row: 2 / 3; grid-column: 1 / 3; display: none}
+
+.menu-movil a svg{
+    color: #FFFFFF;
+    font-size: 3rem;
+}
+
+.navegador-pricipal a{
+    display: inline-block;
+    width: 100%;
+    color: #FFFFFF;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.9rem;
+    padding: 0.5rem 1.5rem;
+    text-align: center;
+    transition: 200ms;
+}
+
+.navegador-pricipal a:hover{
+    background: #FE4918;
+}
+
+@media (min-width:760px){
+
+    .navegador{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navegador .logo{
+        flex-basis: 33%;
+    }
+
+    .navegador .menu-movil{
+        display: none;
+    }
+
+    .navegador .navegador-pricipal{
+        flex-basis: 53%;
+    }
+
+    .navegador-pricipal{
+        display: flex;
+        justify-content: space-between;
+    }
+    .navegador-pricipal a{
+        width: auto;
+    }
+}
+a.nav-selecionado{
+    color: #FE4918;
+    padding: 0.2rem 1.2rem;
+    border: 3px solid #FE4918;
+}
+a.nav-selecionado:hover{
+    color: #FFFFFF;
+}
+
+
+/* ===================================================
+=             SECCION PROGRAMA DEL EVENTO            =
+=================================================== */
+.programa{
+    position: relative;
+}
+
+.contenedor-video{
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+.contenedor-video video{
+    position: relative;
+    height: 70rem;
+    overflow-y: hidden;
+}
+@media (min-width:1030px){
+    .contenedor-video video{
+        width: 100%;
+        left: 0;
+        top: 0;
+        height: 100%;
+    }
+}
+
+.contenido-programa{
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    width: 100%;
+}
+
+.programa-evento{
+    background-color: rgba(255,255,255,.8);
+    padding: 1.5rem;
+}
+@media (min-width:760px){
+    .programa-evento{
+        width: 70%;
+    }
+}
+@media (min-width:992px){
+    .programa-evento{
+        width: 50%;
+    }
+}
+
+.menu-programa{
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #FE4918;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-programa a{
+    color: #000000;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.menu-programa a svg,
+.detale-evento p svg,
+.detale-evento h3{
+    color: #FE4918;
+    font-size: 2rem;
+}
+
+.detale-evento{
+    border-bottom: 1px solid #000000;
+    padding: 0 2rem;
+}
+.detale-evento:nth-child(2){ /* nth-child(2) pes como last-child pero para bordes */
+    border: none;
+}
+
+/* ===================================================
+=                  SECCION INVITADOS                 =
+=================================================== */
+.lista-invitados{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+@media (max-width:480px){
+    .lista-invitados{
+        width: 95%;
+    }
+}
+
+.invitado{
+    flex: 0 0 100%;
+    position: relative;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+@media (min-width:480px){
+    .invitado{
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+@media (min-width:760px){
+    .invitado{
+        flex: 0 0 calc(33.3% - 3rem);
+        margin-bottom: 3rem;
+    }
+}
+
+.invitado p{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 1.6rem 2rem;
+    background-color: rgba(0,0,0,0.7);
+    color: #FE4918;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.invitado img{
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -ms-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+.invitado:hover img{
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    transition: all 100ms ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transform: scale(1.1);
+}
+.invitado:hover p{
+    bottom: -8rem;
+    opacity: 0;
+}
+
+/* ===================================================
+=                   SECCION RESUMEN                  =
+=================================================== */
+div.contador{
+    height: auto;
+    background-image: url(../img/bg-resumen.jpg);
+    /*position: relative;*/ 
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+/*En caso quieras aplicar flitros a un fondo, activas el relative de arriba y quitas lo de abajo del relative*/
+/*Y activas todo esto*/
+/*div.contador::before{
+    background-image: url(../img/bg-resumen.jpg);
+    content: '';
+}*/
+/*.paralax::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    filter: brightness(0.8);
+    -webkit-filter: brightness(0.8);
+    -moz-filter: brightness(0.8);
+    -ms-filter: brightness(0.8);
+    -o-filter: brightness(0.8);
+}
+*/
+.resumen-evento{
+    position: relative;
+    padding: 12rem 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.resumen-evento div{
+    flex: 0 0 50%;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: #FFFFFF;
+    margin-bottom: 4rem;
+}
+.resumen-evento div:last-child{
+    margin-bottom: 0;
+}
+@media (min-width:760px){
+    .resumen-evento div{
+        flex: 0 0 25%;
+        margin-bottom: 0;
+    }
+}
+
+/* =====================================================
+=                    TABLAS DE PRECIOS                 =
+===================================================== */
+.lista-precios{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.tabla-precio{
+    flex: 0 0 calc(33.3% - 6rem);
+    margin-bottom: 2.5rem;
+    padding: 4rem 0 1.2rem 0;
+    text-align: center;
+    background-color: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    transition: 100ms;
+}
+@media (max-width:768px){
+    .tabla-precio{
+        flex: 0 0 calc(50% - 6rem);
+    }
+}
+@media (max-width:480px){
+    .tabla-precio{
+        flex: 0 0 calc(100% - 6rem);
+    }
+    .tabla-precio:nth-child(2){
+        order: -1;
+    }
+} 
+.tabla-precio:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    border: 1px solid #FE4918;
+    box-shadow: 0 0 1rem #0666;
+}
+
+.tabla-precio h3{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+.tabla-precio .numero-grande{
+    color: #000000;
+}
+
+.tabla-precio ul li{
+    font-family: 'PT Sans', sans-serif;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: #868686;
+    line-height: 2.6rem;
+}
+.tabla-precio ul li::before{
+    font-family: 'Font Awesome 5 Free';
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 0.5rem;
+    font-weight: 900;
+    font-size: 2rem;
+    color: green;
+    content: '\f00c';
+}
+
+/* =====================================================
+=                      SECION MAPA                     =
+===================================================== */
+.mapa{
+    height: 42rem;
+    background-color: green;
+}
+
+/* =====================================================
+=                     TESTIMONIALES                    =
+===================================================== */
+.testimoniales{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.testimoniales blockquote{
+    flex: 0 0 95%;
+    margin-bottom: 1rem;
+    background-color: #FFFF;
+    border: 1px solid #DCD8D8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+@media (min-width:480px){
+    .testimoniales blockquote{
+        flex: 0 0 calc(50% - 3rem);
+    }
+}
+@media (min-width:769px){
+    .testimoniales{
+        justify-content: space-between;
+    }
+    .testimoniales blockquote{
+        flex: 0 0 calc(33.3% - 3rem);
+    }
+}
+
+blockquote p{
+    padding-left: 4rem;
+    font-family: 'PT Sans', sans-serif;
+    text-align: justify;
+    position: relative;
+}
+blockquote p::before{
+    content: '';
+    position: absolute;
+    top: -0.7rem;
+    left: -0.4rem;
+    font-family: 'Font Awesome 5 Free';
+    display: inline-block;
+    vertical-align: top;
+    font-weight: 900;
+    font-size: 3rem;
+    color: #FE4918;
+    content: '\f10d';
+}
+.footer-testimonial{
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 20% 73%;
+    align-items: center;
+}
+.footer-testimonial img{
+    border-radius: 50%
+}
+.footer-testimonial div cite{
+    display: block;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: #FE4918;
+}
+
+/* ========================================================
+=                     REGISTRO NEWSLETTER                 =
+======================================================== */
+.newsletter{
+    padding: 10rem 0;
+    background-image: url(../img/bg-inscribir.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+}
+
+.contenido-newsletter{
+    color: #FFFF;
+}
+
+.contenido-newsletter p{
+    margin-bottom: 0;
+}
+
+.contenido-newsletter h3{
+    color: #FFFF;
+    font-size: 6rem;
+    margin: 0 0 3rem 0;
+}
+
+/* ========================================================
+=                    ZONA CUENTA REGRASIVA                =
+======================================================== */
+.reloj{
+    padding: 1.5rem 0 6rem 0;
+}
+.reloj div{
+    font-size: 2.4rem;
+    color: #000000;
+}
+
+/* ========================================================
+=                        ZONA FOOTER                      =
+======================================================== */
+.footer{
+    background-color: #353535;
+}
+
+.info-footer{
+    padding: 4rem 0;
+    display: grid;
+    grid-template-columns: 90%;
+    grid-column-gap: 3rem;
+    justify-content: space-around;
+    
+}
+@media (min-width:480px){
+    .info-footer{
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+    }
+    .sec-footer:last-child{
+        grid-column: 1 / 4;
+        text-align: center;
+    }
+}
+@media (min-width:780px){
+    .info-footer{
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-between;
+    }
+    .sec-footer:last-child{
+        grid-column: 3 / 4;
+        text-align: left;
+    }
+}
+
+.sec-footer{
+    color: #FFFFFF;
+    text-align: justify;
+    font-size: 1.3rem;
+}
+.sec-footer h3{
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    font-family: 'Oswald', sans-serif;
+
+}
+.sec-footer h3 span{
+    font-size: 1.8rem;
+    color: #FE4918;
+    font-family: 'Oswald', sans-serif;
+}
+
+.derechos{
+    background-color: #2A2A2A;
+    color: #FFFF;
+    font-size: 1.3rem;
+    padding: 1.2rem 0;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
