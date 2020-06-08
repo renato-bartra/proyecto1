@@ -1,7 +1,13 @@
 (function(){
     "use strict";
-
+        
+    /* CREAR LA PRIMERA VARIABLE REGALO PARA EL REGISTRO */
     let regalo = document.getElementById('regalo');
+
+    /* -------------------------------------------------------------------------- */
+    /*                             PAGINA DE REGISTRO                             */
+    /* -------------------------------------------------------------------------- */
+    /* ESCUCHA A LA PAGINA PARA INICIAR EL DOM */
     document.addEventListener('DOMContentLoaded', function(){
 
         /* VARIABLES PARA DATOS DE USUARIO */

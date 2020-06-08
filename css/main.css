@@ -755,8 +755,8 @@ div.contador{
 =                      SECION MAPA                     =
 ===================================================== */
 .mapa{
-    height: 42rem;
-    background-color: green;
+    height: 40rem;
+    background-color: #CCCCCC;
 }
 
 /* =====================================================
