@@ -325,6 +325,10 @@ select, option{
     line-height: 9.5rem;
 }
 
+.ocultar{
+    display: none;
+}
+
 /* ==================================================
 =                      CABECERA                     =
 ================================================== */
@@ -521,6 +525,20 @@ a.nav-selecionado:hover{
     color: #000000;
     text-align: center;
     font-family: 'Oswald', sans-serif;
+    position: relative;
+}
+.menu-programa a.activo::after{
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    height: 2rem;
+    bottom: -3rem;
+    background-image: url(../img/talleres-flecha.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
 }
 
 .menu-programa a svg,

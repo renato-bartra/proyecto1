@@ -28,40 +28,6 @@
 
     document.addEventListener('DOMContentLoaded', function(){
 
-        /* PARA QUE ADMITA SOLO NUMEROS */
-        const campoNumerico = document.getElementsByClassName('numerico');
         
-        for (var i = 0 ; i < campoNumerico.length; i++){
-            let campoNumericou = campoNumerico[i];
-            campoNumericou.addEventListener('change', function(){
-              if (campoNumericou.value === '') {
-                  campoNumericou.value = "0";
-              }
-            })
-            
-            campoNumericou.addEventListener('keydown', function(evento) {
-                const teclaPresionada = evento.key;
-                const teclaPresionadaEsUnNumero =
-                    Number.isInteger(parseInt(teclaPresionada));
-
-                const sePresionoUnaTeclaNoAdmitida = 
-                    teclaPresionada != 'ArrowDown' &&
-                    teclaPresionada != 'ArrowUp' &&
-                    teclaPresionada != 'ArrowLeft' &&
-                    teclaPresionada != 'ArrowRight' &&
-                    teclaPresionada != 'Backspace' &&
-                    teclaPresionada != 'Delete' &&
-                    teclaPresionada != 'Enter' &&
-                    !teclaPresionadaEsUnNumero;
-                const comienzaPorCero = 
-                    campoNumericou.value.length === 0 &&
-                    teclaPresionada == 0;
-
-                if (sePresionoUnaTeclaNoAdmitida || comienzaPorCero) {
-                    evento.preventDefault(); 
-                }
-
-            });
-        }
     });
 })();
