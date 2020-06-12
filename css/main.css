@@ -379,8 +379,15 @@ div.heroe{
     font-family: 'PT Sans', sans-serif;
     padding-top: 2rem;
 }
+
+/* LETTERING */
+.nombre-sitio span{
+    font-size: 3.7rem;
+    position: relative;
+    text-shadow: 0 0 3rem #000000;
+}
 @media (min-width:760px){
-    .nombre-sitio{
+    .nombre-sitio span{
         font-size: 7rem;
     }
 }
