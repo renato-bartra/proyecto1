@@ -3,9 +3,12 @@
 /* -------------------------------------------------------------------------- */
 $(function(){
 
-    /* -------------------------------------------------------------------------- */
-    /*                          SE SEPLIEGA EL MENU MOIL                          */
-    /* -------------------------------------------------------------------------- */
+    /* LETTERING */
+    $('.nombre-sitio').lettering();
+
+    /* ------------------------------------------------------------------------- */
+    /*                     SE SEPLIEGA Y CONTRAE EL MENU MOIL                    */
+    /* ------------------------------------------------------------------------- */
     $(".menu-movil").on('click', function(){
         if ($(this).children().children().hasClass("fa-bars")) {
             $(this).children().children().removeClass("fa-bars").addClass("fa-times");
@@ -13,6 +16,27 @@ $(function(){
         }else{
             $(this).children().children().removeClass("fa-times").addClass("fa-bars");
             $(this).next().slideUp();
+        }
+    })
+
+    /* -------------------------------------------------------------------------- */
+    /*                         BARRA SUPERIOR DE MENU FIJA                        */
+    /* -------------------------------------------------------------------------- */
+    // calcula el tamaño de la pantalla actual
+    let windowHeight = $(window).height();
+    
+    // Calcula la altura de el menu
+    let alturaMenu = $('.barra').innerHeight();
+    
+    // Inicia la funcion
+    $(window).scroll(function() {
+        let scroll = $(window).scrollTop();
+        if (scroll > windowHeight) {
+            $(".barra").addClass('fixed');
+            $('body').css({'margin-top': alturaMenu+'px'});
+        }else{
+            $(".barra").removeClass('fixed');
+            $('body').css({'margin-top':'0px'});
         }
     })
 
