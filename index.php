@@ -27,49 +27,7 @@
   <![endif]-->
     
     <!-- CABECERA -->
-    <header class="cabecera-principal">
-        <div class="heroe">
-            <div class="contenido-cabecera contenedor">
-                <nav class="redes-sociales">
-                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                    <a href=""><i class="fab fa-twitter"></i></a>
-                    <a href=""><i class="fab fa-pinterest-p"></i></a>
-                    <a href=""><i class="fab fa-youtube"></i></a>
-                    <a href=""><i class="fab fa-instagram"></i></a>
-                </nav>
-                <div class="info-evento">
-                    <p class="fecha"><i class="fas fa-calendar-alt"></i> 20-23 Jul</p>
-                    <p class="ciudad"><i class="fas fa-map-marker-alt"></i> Tarapoto, Perú</p>
-                </div>
-                <h1 class="nombre-sitio">UXandWD Conference</h1>
-                <p class="slogan">La mejor conferencia de <span class="fw-700">UX y Diseño Web</span></p>
-            </div>
-        </div>
-    </header>
-    
-    <!-- BARRA NAVEGADOR -->
-    <div class="barra">
-        <div class="contenedor navegador"> 
-
-            <!-- LOGO -->
-            <div class="logo">
-                <a href="index.html"><img src="images/logo.svg" alt="LogoUXandWDConference"></a>
-            </div>
-
-            <!-- Menu en celular -->
-            <div class="menu-movil">
-                <a><i class="fas fa-bars"></i></a>
-            </div>
-
-            <!-- Navegador proncipal -->
-            <nav class="navegador-pricipal">
-                <a href="modulos/conferencia.html">Conferencia</a>
-                <a href="">Calendario</a>
-                <a href="">Invitados</a>
-                <a href="modulos/registro.html" class="nav-selecionado">Reservaciones</a>
-            </nav>
-        </div>
-    </div>
+    <?php include_once 'includes/templates/cabecera.php'; ?>
 
     <!-- SECCION DE MINI INFO -->
     <section class="seccion contenedor">
@@ -110,14 +68,14 @@
                         <div class="detale-evento">
                             <h3>HTML5, CSS3, JavaScript</h3>
                             <p><i class="fas fa-clock"></i> 16:00 hrs</p>
-                            <p><i class="fas fa-calendar-alt"></i> 30 Jul</p>
+                            <p><i class="fas fa-calendar-alt"></i> 20 Jul</p>
                             <p><i class="fas fa-user-tie"></i> Sharon Julvi Pinedo Arce</p>
                         </div>
 
                         <div class="detale-evento">
                             <h3>Responsive Web Design</h3>
                             <p><i class="fas fa-clock"></i> 20:00 hrs</p>
-                            <p><i class="fas fa-calendar-alt"></i> 30 Jul</p>
+                            <p><i class="fas fa-calendar-alt"></i> 20 Jul</p>
                             <p><i class="fas fa-user-tie"></i> Renato Bartra Reategui</p>
                         </div>
 
@@ -134,14 +92,14 @@
                         <div class="detale-evento">
                             <h3>Como ser freelancer</h3>
                             <p><i class="fas fa-clock"></i> 10:00 hrs</p>
-                            <p><i class="fas fa-calendar-alt"></i> 30 Jul</p>
+                            <p><i class="fas fa-calendar-alt"></i> 20 Jul</p>
                             <p><i class="fas fa-user-tie"></i> Gregorio Sanchez</p>
                         </div>
 
                         <div class="detale-evento">
                             <h3>Tecnologías del futuro</h3>
                             <p><i class="fas fa-clock"></i> 17:00 hrs</p>
-                            <p><i class="fas fa-calendar-alt"></i> 30 Jul</p>
+                            <p><i class="fas fa-calendar-alt"></i> 20 Jul</p>
                             <p><i class="fas fa-user-tie"></i> Susan Sanchez</p>
                         </div>
 
@@ -158,14 +116,14 @@
                         <div class="detale-evento">
                             <h3>UX/UI para moviles</h3>
                             <p><i class="fas fa-clock"></i> 17:00 hrs</p>
-                            <p><i class="fas fa-calendar-alt"></i> 31 Jul</p>
+                            <p><i class="fas fa-calendar-alt"></i> 21 Jul</p>
                             <p><i class="fas fa-user-tie"></i> Harold Garcia</p>
                         </div>
 
                         <div class="detale-evento">
                             <h3>Aprende a programar en una semana</h3>
                             <p><i class="fas fa-clock"></i> 10:00 hrs</p>
-                            <p><i class="fas fa-calendar-alt"></i> 31 Jul</p>
+                            <p><i class="fas fa-calendar-alt"></i> 21 Jul</p>
                             <p><i class="fas fa-user-tie"></i> Susan Garcia</p>
                         </div>
 
@@ -187,11 +145,11 @@
             <!-- lista de invitados -->
             <div class="invitado">
                 <img src="images/invitado1.jpg" alt="invitado">
-                <p>Rafael Bautista</p>
+                <p>Renato Bartra</p>
             </div>
             <div class="invitado">
                 <img src="images/invitado2.jpg" alt="invitado">
-                <p>Shari Herrera</p>
+                <p>Sharon Pinedo</p>
             </div>
             <div class="invitado">
                 <img src="images/invitado3.jpg" alt="invitado">
@@ -355,36 +313,7 @@
     </section>
 
     <!-- PIECERA -->
-    <footer class="footer">
-        <div class="contenedor">
-
-            <!-- Informacion del footer -->
-            <div class="info-footer">
-                <div class="sec-footer">
-                    <h3 class="mayusculas">Sobre <span>UXandWD Conference</span></h3>
-                    <p>Maecenas fringilla bibendum fermentum. Cras quis est sodales purus interdum vestibulum. In suscipit, nibh quis laoreet feugiat, dui libero viverra nibh, in aliquam urna risus laoreet est. Pellentesque nec facilisis nunc, ac facilisis nulla. Nunc pharetra felis ut ultricies aliquam. Cras quis libero non ligula posuere tincidunt. Curabitur rutrum dui sapien, sed euismod sapien eleifend in.</p>
-                </div>
-                <div class="sec-footer">
-                    <h3 class="mayusculas">Ultimos <span>Twits</span></h3>
-                    <p>Etiam vitae lobortis odio. Etiam consectetur ipsum ac metus interdum, at aliquam nunc porta.</p>
-                    <p>uis in libero enim. Phasellus interdum justo a pretium ultricies. Integer feugiat velit.</p>
-                    <p>Ut arcu velit, varius sed lobortis et, scelerisque id sem. Nullam ornare mi quis tristique tincidunt.</p>
-                </div>
-                <div class="sec-footer">
-                    <h3 class="mayusculas">Redes <span>sociales</span></h3>
-                    <nav class="redes-sociales">
-                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href=""><i class="fab fa-pinterest-p"></i></a>
-                        <a href=""><i class="fab fa-youtube"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <!-- Derechos de autor -->
-        <div class="derechos centrar-texto">GDLWEBCAM Todos los derechos reservados &copy;</div>
-    </footer>
+    <?php include_once "includes/templates/piecera.php" ?>
 
 <!-- JS -->
 <script src="js/vendor/modernizr-3.8.0.min.js"></script>
