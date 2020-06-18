@@ -35,8 +35,8 @@
         <!-- Navegador proncipal -->
         <nav class="navegador-pricipal">
             <a href="modulos/conferencia.php">Conferencia</a>
-            <a href="">Calendario</a>
-            <a href="">Invitados</a>
+            <a href="modulos/calendario.php">Calendario</a>
+            <a href="modulos/invitados.php">Invitados</a>
             <a href="modulos/registro.php" class="nav-selecionado">Reservaciones</a>
         </nav>
     </div>

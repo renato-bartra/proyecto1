@@ -41,6 +41,18 @@ $(function(){
     })
 
     /* -------------------------------------------------------------------------- */
+    /*                              MENU SELECCIONADO                             */
+    /* -------------------------------------------------------------------------- */
+    var url = window.location.pathname,     
+    urlRegExp = new RegExp(url.replace(/\/$/,'') + "$");
+    $('.navegador-pricipal a').each(function(){
+        if(urlRegExp.test(this.href.replace(/\/$/,''))){
+            $('.navegador-pricipal a').removeClass('activo-nav');
+            $(this).addClass('activo-nav');
+        }
+    });
+
+    /* -------------------------------------------------------------------------- */
     /*                        PARA QUE ADMITA SOLO NUMEROS                        */
     /* -------------------------------------------------------------------------- */
     const campoNumerico = document.getElementsByClassName('numerico');

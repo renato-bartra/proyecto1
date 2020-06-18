@@ -90,11 +90,13 @@
                 if (paseDia.value === "0" && paseCompleto.value === "0" && dosDias.value === "0" &&
                     paseDia.value === "" && paseCompleto.value === "" && dosDias.value === "") {
                     alert("Debes elegir almenos un pase de entrada");
+                    return;
                 }else{
                     var montoT = (parseInt(paseDia.value * 30) || 0) + (parseInt(paseCompleto.value * 50) || 0) + (parseInt(dosDias.value * 45) || 0) + (parseInt(etiquetas.value * 2) || 0) + (Number((camisa.value * 10) * 0.93) || 0);
                 }
             }else{
                 alert("Debes elegir un regalo");
+                return;
             }
 
             /* GENERA EL LISTADO DE PRODUCTOS */

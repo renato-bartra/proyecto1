@@ -221,6 +221,15 @@ select, option{
     font-size: 1.4rem;
 }
 
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
 .fw-300{
     font-weight: 300;
 }
@@ -394,6 +403,11 @@ div.heroe{
 
 .slogan span{
     font-size: 1.8rem;
+}
+
+.activo-nav{
+    background: #FE4918;
+    color: #FFFFFF !important;
 }
 
 /* ==================================================
@@ -1120,6 +1134,58 @@ div.registro{
         flex-basis: 40%;
     }
 }
+
+/* -------------------------------------------------------------------------- */
+/*                            PAGINA DE CALENDARIO                            */
+/* -------------------------------------------------------------------------- */
+.consulta h3{
+    background-color: #F34918;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 1rem 0;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.lst-eventos{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
+}
+@media (min-width:768px){
+    .lst-eventos{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.dia{
+    border: 2px solid #E1E1E1;
+    padding: .5rem;
+    transition: 300ms;
+}
+.dia:hover{
+    background-color: #E1E1E1;
+    transition: all 300ms ease;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+.dia p{
+    font-size: 1.4rem;
+}
+.dia svg{
+    color: #F34918;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.dia .titulo{
+    color: #F34918;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
