@@ -1138,7 +1138,7 @@ div.registro{
 /* -------------------------------------------------------------------------- */
 /*                            PAGINA DE CALENDARIO                            */
 /* -------------------------------------------------------------------------- */
-.consulta h3{
+.calendario h3{
     background-color: #F34918;
     color: #FFFFFF;
     margin: 0;
@@ -1184,6 +1184,46 @@ div.registro{
     font-size: 1.6rem;
     text-transform: uppercase;
     font-weight: 700;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  COLOR BOX                                 */
+/* -------------------------------------------------------------------------- */
+.caja-invitado-i{
+    padding: 2.7rem 2.7rem 1.5rem 2.7rem  !important;
+    text-align: center;
+    overflow: hidden;
+}
+
+#cboxLoadedContent .cboxElement h3{
+    color: #000000;
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.ajustar img {
+    width: 300px;
+	height: 300px;
+    object-fit: none;
+    border-radius: 50%;
+	border: 3px solid #F34918;
+}
+
+.caja-invitado{
+    background-color: #F34918;
+}
+
+.caja-invitado .redes-invitados{
+    height: 6rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.redes-invitados svg{
+    color: #FFFFFF;
+    font-size: 3rem;
 }
 
 /* ==========================================================================

@@ -53,122 +53,101 @@
             <div class="contenedor">
                 <div class="programa-evento">
 
+                <?php
+                    try {
+                        require_once('includes/funciones/conexion.php');
+
+                        $sql = "SELECT * FROM `categoria_evento`";
+
+                        $resultado = $conexion->query($sql);
+                    } catch (\Exception $e){
+                        echo $e->getMessaje();
+                    }
+                ?>
+
                     <!-- Zona programacion -->
                     <h2 class="centrar-texto mayusculas">Programa del evento</h2>
                     <nav class="menu-programa">
-                        <a href="#talleres"><i class="fas fa-code"></i> Talleres</a>
-                        <a href="#conferencias"><i class="fas fa-comment"></i> Conferenias</a>
-                        <a href="#seminarios"><i class="fas fa-university"></i> Seminarios</a>
+                        <?php while($cat = $resultado->fetch_array(MYSQLI_ASSOC)){ ?>
+                            <a href="#<?php echo $cat['descripcion'] ?>">
+                                <i class="fas <?php echo $cat['icono'] ?>"></i> <?php echo strtoupper($cat['descripcion']) ?>
+                            </a>
+                        <?php } ?>
                     </nav>
 
-                    <!-- Programacion de talleres -->
-                    <div id="talleres" class="info-curso ocultar">
+                    <?php
+                        try {
+                            require_once('includes/funciones/conexion.php');
 
-                        <!-- Zona detalle de la programacion -->
-                        <div class="detale-evento">
-                            <h3>HTML5, CSS3, JavaScript</h3>
-                            <p><i class="fas fa-clock"></i> 16:00 hrs</p>
-                            <p><i class="fas fa-calendar-alt"></i> 20 Jul</p>
-                            <p><i class="fas fa-user-tie"></i> Sharon Julvi Pinedo Arce</p>
-                        </div>
+                            $sql = "SELECT `id_evento`, evento.`descripcion`, `fecha_evento`, `hora_evento`, categoria_evento.`descripcion` as 'cat_evento', categoria_evento.`icono` as 'icono', invitados.`nombre` as 'nombre', invitados.`apellido` as 'apellido' ";
+                            $sql .= "FROM evento ";
+                            $sql .= "INNER JOIN categoria_evento ON (evento.id_categoria = categoria_evento.id_categoria) ";
+                            $sql .= "INNER JOIN invitados ON (evento.id_invitado = invitados.id_invitado) ";
+                            $sql .= "AND evento.id_categoria = 1 ";
+                            $sql .= "ORDER BY id_evento LIMIT 2;";
+                            $sql .= "SELECT `id_evento`, evento.`descripcion`, `fecha_evento`, `hora_evento`, categoria_evento.`descripcion` as 'cat_evento', categoria_evento.`icono` as 'icono', invitados.`nombre` as 'nombre', invitados.`apellido` as 'apellido' ";
+                            $sql .= "FROM evento ";
+                            $sql .= "INNER JOIN categoria_evento ON (evento.id_categoria = categoria_evento.id_categoria) ";
+                            $sql .= "INNER JOIN invitados ON (evento.id_invitado = invitados.id_invitado) ";
+                            $sql .= "AND evento.id_categoria = 2 ";
+                            $sql .= "ORDER BY id_evento LIMIT 2;";
+                            $sql .= "SELECT `id_evento`, evento.`descripcion`, `fecha_evento`, `hora_evento`, categoria_evento.`descripcion` as 'cat_evento', categoria_evento.`icono` as 'icono', invitados.`nombre` as 'nombre', invitados.`apellido` as 'apellido' ";
+                            $sql .= "FROM evento ";
+                            $sql .= "INNER JOIN categoria_evento ON (evento.id_categoria = categoria_evento.id_categoria) ";
+                            $sql .= "INNER JOIN invitados ON (evento.id_invitado = invitados.id_invitado) ";
+                            $sql .= "AND evento.id_categoria = 3 ";
+                            $sql .= "ORDER BY id_evento LIMIT 2;";
 
-                        <div class="detale-evento">
-                            <h3>Responsive Web Design</h3>
-                            <p><i class="fas fa-clock"></i> 20:00 hrs</p>
-                            <p><i class="fas fa-calendar-alt"></i> 20 Jul</p>
-                            <p><i class="fas fa-user-tie"></i> Renato Bartra Reategui</p>
-                        </div>
+                        } catch (\Exception $e){
+                            echo $e->getMessaje();
+                        }
 
-                        <div class="zona-botones texto-derecha">
-                            <a class="boton btn-naranja">Ver todos</a>
-                        </div>
+                        // Realiza la conexxion multi query
+                        $conexion->multi_query($sql);
 
-                    </div>
+                        do { 
+                            $resultado = $conexion->store_result();
+                            $row = $resultado->fetch_all(MYSQLI_ASSOC); 
+                    ?>
+                    <?php  
+                        setlocale(LC_TIME, "es_ES.UTF-8");
+                        setlocale(LC_TIME, "spanish");
+                        $i = 0;
+                        foreach($row as $evento){
+                            if ($i % 2 == 0) {   
+                    ?>
+                            <!-- Programacion de talleres -->
+                            <div id="<?php echo $evento['cat_evento'] ?>" class="info-curso ocultar">
+                            <?php } ?>
+        
+                                <!-- Zona detalle de la programacion -->
+                                <div class="detale-evento">
+                                    <h3><?php echo ($evento['descripcion']) ?></h3>
+                                    <p><i class="fas fa-clock"></i> <?php echo $evento['hora_evento'] ?> hrs</p>
+                                    <p><i class="fas fa-calendar-alt"></i> <?php echo utf8_encode(strftime("%d de %B", strtotime($evento['fecha_evento']))) ?></p>
+                                    <p><i class="fas fa-user-tie"></i> <?php echo $evento['nombre']." ".$evento['apellido'] ?></p>
+                                </div>
 
-                    <!-- Programaion de conferencias -->
-                    <div id="conferencias" class="info-curso ocultar">
+                            <?php if($i % 2 == 1){ ?>
+                                <div class="zona-botones texto-derecha">
+                                    <a href="modulos/calendario.php" class="boton btn-naranja">Ver todos</a>
+                                </div>
+                            </div>
+                            <?php } ?>
+                            <?php $i++ ?>
+                        <?php } ?>
+                        <?php $resultado->free(); ?>
+                    <?php } while ($conexion->more_results() && $conexion->next_result()); ?>
 
-                        <!-- Zona detalle de la programacion -->
-                        <div class="detale-evento">
-                            <h3>Como ser freelancer</h3>
-                            <p><i class="fas fa-clock"></i> 10:00 hrs</p>
-                            <p><i class="fas fa-calendar-alt"></i> 20 Jul</p>
-                            <p><i class="fas fa-user-tie"></i> Gregorio Sanchez</p>
-                        </div>
-
-                        <div class="detale-evento">
-                            <h3>Tecnologías del futuro</h3>
-                            <p><i class="fas fa-clock"></i> 17:00 hrs</p>
-                            <p><i class="fas fa-calendar-alt"></i> 20 Jul</p>
-                            <p><i class="fas fa-user-tie"></i> Susan Sanchez</p>
-                        </div>
-
-                        <div class="zona-botones texto-derecha">
-                            <a class="boton btn-naranja">Ver todos</a>
-                        </div>
-
-                    </div>
-
-                    <!-- Progamacion de seminarios -->
-                    <div id="seminarios" class="info-curso ocultar">
-
-                        <!-- Zona detalle de la programacion -->
-                        <div class="detale-evento">
-                            <h3>UX/UI para moviles</h3>
-                            <p><i class="fas fa-clock"></i> 17:00 hrs</p>
-                            <p><i class="fas fa-calendar-alt"></i> 21 Jul</p>
-                            <p><i class="fas fa-user-tie"></i> Harold Garcia</p>
-                        </div>
-
-                        <div class="detale-evento">
-                            <h3>Aprende a programar en una semana</h3>
-                            <p><i class="fas fa-clock"></i> 10:00 hrs</p>
-                            <p><i class="fas fa-calendar-alt"></i> 21 Jul</p>
-                            <p><i class="fas fa-user-tie"></i> Susan Garcia</p>
-                        </div>
-
-                        <div class="zona-botones texto-derecha">
-                            <a class="boton btn-naranja">Ver todos</a>
-                        </div>
-
-                    </div>
+                   
+                    
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SECCION INVITADOS -->
-    <section class="invitados seccion">
-        <h2 class="centrar-texto mayusculas">Nuestros invitados</h2>
-        <div class="lista-invitados contenedor">
-
-            <!-- lista de invitados -->
-            <div class="invitado">
-                <img src="images/invitado1.jpg" alt="invitado">
-                <p>Renato Bartra</p>
-            </div>
-            <div class="invitado">
-                <img src="images/invitado2.jpg" alt="invitado">
-                <p>Sharon Pinedo</p>
-            </div>
-            <div class="invitado">
-                <img src="images/invitado3.jpg" alt="invitado">
-                <p>Gregorio Sanchez</p>
-            </div>
-            <div class="invitado">
-                <img src="images/invitado4.jpg" alt="invitado">
-                <p>Susana Rivera</p>
-            </div>
-            <div class="invitado">
-                <img src="images/invitado5.jpg" alt="invitado">
-                <p>Harold Garcia</p>
-            </div>
-            <div class="invitado">
-                <img src="images/invitado6.jpg" alt="invitado">
-                <p>Susan Sanchez</p>
-            </div>
-        </div>
-    </section>
+    <?php require_once('includes/templates/invitados.php') ?>
     
     <!-- SECCION REUMEN DEL EVENTO CON SU CONTADOR -->
     <div class="contador paralax">

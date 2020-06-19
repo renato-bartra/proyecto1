@@ -39,7 +39,7 @@
             try {
                 require_once('../includes/funciones/conexion.php');
 
-                $sql = "SELECT id_evento, evento.descripcion, fecha_evento, hora_evento, categoria_evento.descripcion as cat_evento, categoria_evento.icono as icono, invitados.nombre as nombre, invitados.apellido as apellido ";
+                $sql = "SELECT `id_evento`, evento.`descripcion`, `fecha_evento`, `hora_evento`, categoria_evento.`descripcion` as 'cat_evento', categoria_evento.`icono` as 'icono', invitados.`nombre` as 'nombre', invitados.`apellido` as 'apellido' ";
                 $sql .= "FROM evento ";
                 $sql .= "INNER JOIN categoria_evento ON (evento.id_categoria = categoria_evento.id_categoria) ";
                 $sql .= "INNER JOIN invitados ON (evento.id_invitado = invitados.id_invitado) ";
@@ -52,7 +52,7 @@
         ?>
 
         <!-- AGRUPA LOS DATOS -->
-        <div class="consulta">
+        <div class="calendario">
             <?php
                 $calendario = array();
                 while( $eventos = $resultado->fetch_assoc() ){ 
