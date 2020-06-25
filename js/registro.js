@@ -31,6 +31,11 @@
         let lstProductos = document.getElementById('lista-productos');
         let sumaTotal = document.getElementById('suma-total');
 
+        // DESABILITA EN BOTON PAGAR
+        btnRegistro.disabled = true;
+        btnRegistro.style.backgroundColor = "#E27769";
+        btnRegistro.style.cursor = "default";
+
         /* EXTRAS */
         let etiquetas = document.getElementById('etiqueta_evento');
         let camisa= document.getElementById('camisa_envento');
@@ -63,6 +68,7 @@
         /* FUNCION VALIDAR EMAIL */
         function validarEmail(){
             let campo = event.target;
+            let emailV = email.value;
 
             var reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             var regOficial = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
@@ -70,6 +76,30 @@
             //Se muestra un texto a modo de ejemplo, luego va a ser un icono
             if (reg.test(campo.value) && regOficial.test(campo.value)) {
                 errorDiv.style.display = 'none';
+
+                let validarEmail = new FormData();
+                validarEmail.append('validarEmail', emailV);
+                
+                fetch("../includes/funciones/funciones.php", {
+                    method: 'POST',
+                    body: validarEmail
+                })
+                .then(res => res.json())
+                .then(datos => {
+                    if (datos) {
+                        errorDiv.style.display = 'block';
+                        errorDiv.style.fontSize = "1.7rem";
+                        errorDiv.innerHTML = 'El email ya fue registrado';
+                        errorDiv.style.border = "1px solid red";
+                        errorDiv.style.backgroundColor = "#F34918";
+                        errorDiv.style.color = "#FFFFFF";
+                        email.value = "";
+                    }
+                })
+                .catch(function(error) {
+                    console.log('Request failed', error)
+                  });
+                
             } else {
                 errorDiv.style.display = 'block';
                 errorDiv.style.fontSize = "1.7rem";
@@ -78,6 +108,8 @@
                 errorDiv.style.backgroundColor = "#F34918";
                 errorDiv.style.color = "#FFFFFF";
             }
+
+            
         }
         
         /* -------------------------------------------------------------------------- */
@@ -126,6 +158,12 @@
             }
 
             sumaTotal.innerHTML = `<p>$ ${montoT.toFixed(2)}</p>`;
+
+            // Abilita el boton pagar
+            btnRegistro.disabled = false;
+            btnRegistro.style.backgroundColor = "#FE4918";
+            btnRegistro.style.cursor = "pointer";
+            document.getElementById('total_pedido').value = montoT.toFixed(2);
             
         });
 

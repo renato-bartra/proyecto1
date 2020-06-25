@@ -27,13 +27,13 @@
   <![endif]-->
     
     <!-- CABECERA -->
-    <?php include_once "../includes/templates/cab-interna.php" ?>
+    <?php include_once "../includes/templates/cab-interna.php"; ?>
 
     <!-- MUESTRA LOS INVITADOS -->
-    <?php include_once "../includes/templates/invitados.php" ?>
+    <?php include_once "../includes/templates/invitados.php"; ?>
 
     <!-- PIECERA -->
-    <?php include_once "../includes/templates/piecera.php" ?>
+    <?php include_once "../includes/templates/piecera.php"; ?>
 
 <!-- JS -->
 <script src="../js/vendor/modernizr-3.8.0.min.js"></script>
@@ -44,6 +44,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/fontawesome.min.js"></script>
 <script src="../js/vendor/jquery.lettering.js"></script>
 <script src="../js/jquery.colorbox-min.js"></script>
+<script src="../js/invitados.js"></script>
 <script src="../js/main.js"></script>
 
 </body>

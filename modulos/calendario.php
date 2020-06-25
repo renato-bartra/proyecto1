@@ -26,7 +26,7 @@
   <![endif]-->
     
     <!-- CABECERA -->
-    <?php include_once "../includes/templates/cab-interna.php" ?>
+    <?php include_once "../includes/templates/cab-interna.php"; ?>
 
     <!-- SECCION DE MINI INFO -->
     <section class="seccion contenedor">
@@ -114,7 +114,7 @@
     </section>
 
     <!-- PIECERA -->
-    <?php include_once "../includes/templates/piecera.php" ?>
+    <?php include_once "../includes/templates/piecera.php"; ?>
 
 <!-- JS -->
 <script src="../js/vendor/modernizr-3.8.0.min.js"></script>

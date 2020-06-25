@@ -23,12 +23,12 @@
 <body>
 
     <!-- CABECERA -->
-    <?php include_once "../includes/templates/cab-interna.php" ?>
+    <?php include_once "../includes/templates/cab-interna.php"; ?>
 
     <!-- SECIONDE REGISTRO -->
     <section class="seccion contenedor">
         <h2 class="centrar-texto mayusculas">Registro de usuarios</h2>
-        <form id="registro" class="registro" action="index.html" method="post">
+        <form id="registro" class="registro" action="validar-registro.php" method="post">
             <div id="datos-usuario" class="registro caja">
 
                 <!-- Ingro de nombre -->
@@ -71,7 +71,7 @@
                         </ul>
                         <div class="orden zona-botones">
                             <label for="pase_dia">Numero de boletos: </label>
-                            <input type="number" id="pase_dia" class="numerico" name="pase_dia" min="0" placeholder="0">
+                            <input type="number" id="pase_dia" class="numerico" name="boletos[]" min="0" placeholder="0">
                         </div>
                     </div>
 
@@ -85,7 +85,7 @@
                         </ul>
                         <div class="orden zona-botones">
                             <label for="pase_completo">Numero de boletos: </label>
-                            <input type="number" id="pase_completo" class="numerico" name="pase_completo" min="0" placeholder="0">
+                            <input type="number" id="pase_completo" class="numerico" name="boletos[]" min="0" placeholder="0">
                         </div>
                     </div>
 
@@ -99,7 +99,7 @@
                         </ul>
                         <div class="orden zona-botones">
                             <label for="dos_dias">Numero de boletos: </label>
-                            <input type="number" id="dos_dias" class="numerico" name="dos_dias" min="0" placeholder="0">
+                            <input type="number" id="dos_dias" class="numerico" name="boletos[]" min="0" placeholder="0">
                         </div>
                     </div>
                 </div>
@@ -194,23 +194,23 @@
                         <!-- Camisa del evento -->
                         <div class="orden">
                             <label for="camisa_envento">Camisa de evento $10 <small>(promocion 7% dto.)</small></label>
-                            <input type="number" min="0" id="camisa_envento" class="numerico" placeholder="0">
+                            <input type="number" min="0" id="camisa_envento" class="numerico" name="pedido_camisas" placeholder="0">
                         </div>
 
                         <!-- Etiquetas -->
                         <div class="orden">
                             <label for="etiqueta_evento">Paquete de 10 etiquetas $2 <small>(HTML5, CSS3, JavaScript)</small></label>
-                            <input type="number" min="0" id="etiqueta_evento" class="numerico" placeholder="0">
+                            <input type="number" min="0" id="etiqueta_evento" class="numerico" name="pedido_etiquetas" placeholder="0">
                         </div>
 
                         <!-- Regalo -->
                         <div class="orden">
                             <label for="regalo">Seleccione regalo: </label><br><br>
-                            <select id="regalo" required>
+                            <select id="regalo" name="regalo" required>
                                 <option value="">Selecione un regalo</option>
-                                <option value="ETI">Etiquetas</option>
-                                <option value="PUL">Pulsera</option>
-                                <option value="PLU">Pluma</option>
+                                <option value="2">Etiquetas</option>
+                                <option value="1">Pulsera</option>
+                                <option value="3">Pluma</option>
                             </select>
                         </div>
                         <div class="centrar-texto">
@@ -228,8 +228,11 @@
                         <div id="suma-total">
 
                         </div>
+
+                        <input type="hidden" name="total_pedido" id="total_pedido">
+
                         <div id="suma-total" class="centrar-texto">
-                            <input id="btnRegistro" type="submit" class="boton btn-naranja" value="pagar">
+                            <input id="btnRegistro" type="submit" name="submit" class="boton btn-naranja" value="pagar">
                         </div>
                     </div>
                 </div>
@@ -238,7 +241,7 @@
     </section>
 
     <!-- PIECERA -->
-    <?php include_once "../includes/templates/piecera.php" ?>
+    <?php include_once "../includes/templates/piecera.php"; ?>
 
 <!-- JS -->
 <script src="../js/vendor/modernizr-3.8.0.min.js"></script>
