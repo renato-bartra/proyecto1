@@ -1,33 +1,5 @@
-<?php if(isset($_POST['submit'])){
-        $nombre = filter_var($_POST['nombre'], FILTER_SANITIZE_STRING);
-        $apellido = filter_var($_POST['apellido'], FILTER_SANITIZE_STRING);
-        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-        $regalo = filter_var($_POST['regalo'], FILTER_SANITIZE_NUMBER_INT);
-        $total = filter_var($_POST['total_pedido'], FILTER_SANITIZE_STRING);
-        $fecha = date('Y-m-d H:i:s');
-        include_once "../includes/funciones/funciones.php";
-        // Pedidos
-        $camisas = $_POST['pedido_camisas'];
-        $etiquetas = $_POST['pedido_etiquetas'];
-        $boletos = $_POST['boletos'];
-        $pedidos = productos_json($boletos, $camisas, $etiquetas);
-        // Eventos
-        $eventos = $_POST['registro'];
-        $registro = eventos_json($eventos);
-        try {
-            require_once('../includes/funciones/conexion.php');
-            $stmt = $conexion->prepare("INSERT INTO registrados (nomb_registrado, apelli_registrado, email_registrado, fecha_registro, pases_articulos, talleres_registrados, id_regalo, total_pagado) VALUES (?,?,?,?,?,?,?,?)");
-            $stmt->bind_param("ssssssis", $nombre, $apellido, $email, $fecha, $pedidos, $registro, $regalo, $total);
-            $stmt->execute();
-            // echo $stmt->errno . " " . $stmt->error; en caso ocurra un problema
-            $stmt->close();
-            $conexion->close();
-            header('Location: validar-registro.php?done=1');
-        } catch (Exception $e){
-            echo $e->getMessaje();
-        }
-        
-} ?>
+<?php 
+ ?>
 <!doctype html>
 <html class="no-js" lang="">
 

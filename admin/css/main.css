@@ -1,0 +1,11 @@
+.swal2-popup {
+    font-size: 1.6rem !important;
+}
+
+.login-page .main-footer{
+    display: none;
+}
+
+.btn a{
+    color: #FFFFFF;
+}
