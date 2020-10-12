@@ -41,8 +41,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-list-ol"></i> Ver Todos</a></li>
-                    <li><a href="#"><i class="fa fa-plus-circle"></i> Agregar Evento</a></li>
+                    <li><a href="lista-evento.php"><i class="fa fa-list-ol"></i> Ver Todos</a></li>
+                    <li><a href="cu-evento.php"><i class="fa fa-plus-circle"></i> Agregar Evento</a></li>
                 </ul>
             </li>
 

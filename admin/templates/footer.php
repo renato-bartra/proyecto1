@@ -29,5 +29,6 @@
     <!-- Scripts propios -->
     <script src="js/main.js"></script>
     <script src="js/pages/administradores.js"></script>
+    <script src="js/pages/eventos.js"></script>
 </body>
 </html>
